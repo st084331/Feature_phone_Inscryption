@@ -4,12 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        AIVsAI();
-        Console.WriteLine("\n\n");
-        Boss_Battle();
+        Console.WriteLine("Enter the number of Game Mode:\n1. Person Vs Person\n2. Boss Fight (AI vs Person)\n3. Bot battle");
+        int choice = 0;
+        while (choice < 1 || choice > 3)
+        {
+            choice = Convert.ToInt32(Console.ReadLine());
+        }
+
+        switch (choice)
+        {
+            case 1:
+                PersonVsPerson();
+                break;
+            case 2:
+                Boss_Fight();
+                break;
+            case 3:
+                AIVsAI();
+                break;
+        }
     }
 
-    static void Boss_Battle()
+    static void Boss_Fight()
     {
         var rand = new Random();
         int r = rand.Next(0, 2);
