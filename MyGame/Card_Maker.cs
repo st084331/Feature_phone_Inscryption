@@ -1,6 +1,6 @@
 namespace MyGame;
 
-public class Card_Maker
+public class Card_Maker: Main_Components
 {
     private int player_number;
     private string name;

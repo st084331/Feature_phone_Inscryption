@@ -2,7 +2,7 @@ using System.Buffers;
 
 namespace MyGame;
 
-public class Deck
+public class Deck: Main_Components
 {
     private Card_Maker owner;
     private List<Card> cards;
@@ -15,7 +15,7 @@ public class Deck
         int r;
         for (int i = 0; i < 35; i++)
         {
-            r = rand.Next(0,16);
+            r = rand.Next(0,17);
             switch (r)
             {
                 case 0:
@@ -95,5 +95,10 @@ public class Deck
     public List<Card> deck_list()
     {
         return cards;
+    }
+    
+    public int cards_counter()
+    {
+        return cards.Count;
     }
 }

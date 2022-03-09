@@ -1,6 +1,6 @@
 namespace MyGame;
 
-public class Game_Field
+public class Game_Field: Main_Components
 {
     private Card[] slots;
     private int[] scales;

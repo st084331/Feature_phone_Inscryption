@@ -51,4 +51,9 @@ public class Hand
             i++;
         }
     }
+
+    public int cards_counter()
+    {
+        return cards.Count;
+    }
 }

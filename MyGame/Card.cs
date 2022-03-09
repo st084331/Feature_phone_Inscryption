@@ -1,6 +1,6 @@
 namespace MyGame;
 
-public class Card
+public class Card: Main_Components
 {
     protected int heal_points;
     protected int damage;
