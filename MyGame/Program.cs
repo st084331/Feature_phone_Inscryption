@@ -1,6 +1,6 @@
 ﻿using MyGame;
 
-class Program
+class Program: Main_Components
 {
     static void Main(string[] args)
     {

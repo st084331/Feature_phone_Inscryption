@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1cqwkwTJBGacMIhkMz7aAPz2cBorQO2oiPP9UMbAhAwZ/h3LpBztvO5/pInI4ZExY4Roc4SLJfW33LfJ7awCKA==",
+  "dgSpecHash": "e+gGVchEAeK4+zp1f+tW18JBKrQ3hkor3HuFEoFLv3ZGVqUQB26PM2lwAE4rVawcMel3dWr3aViN2IMdHtvOvA==",
   "success": true,
   "projectFilePath": "/Users/akabynda/RiderProjects/MyGame/MyGame/MyGame.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/akabynda/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.15/microsoft.netcore.app.host.osx-x64.5.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

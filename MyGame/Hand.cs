@@ -1,6 +1,6 @@
 namespace MyGame;
 
-public class Hand
+public class Hand: Main_Components
 {
     private List<Card> cards;
     private Card_Maker owner;
