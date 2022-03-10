@@ -1,6 +1,6 @@
 namespace MyGame;
 
-public class Main_Components
+public class Main_Components: Program
 {
     
 }

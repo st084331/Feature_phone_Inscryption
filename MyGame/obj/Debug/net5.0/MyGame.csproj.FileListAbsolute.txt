@@ -1,0 +1,16 @@
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.csproj.AssemblyReference.cache
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.AssemblyInfoInputs.cache
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.AssemblyInfo.cs
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.csproj.CoreCompileInputs.cache
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame.deps.json
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame.runtimeconfig.json
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame.runtimeconfig.dev.json
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame.dll
+/Users/akabynda/RiderProjects/MyGame/MyGame/bin/Debug/net5.0/MyGame.pdb
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.dll
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/refint/MyGame.dll
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.pdb
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/MyGame.genruntimeconfig.cache
+/Users/akabynda/RiderProjects/MyGame/MyGame/obj/Debug/net5.0/ref/MyGame.dll
