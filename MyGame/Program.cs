@@ -27,6 +27,7 @@ public class Program
 
     static void Boss_Fight()
     {
+        //Рандом для определения, кто ходит первым
         var rand = new Random();
         int r = rand.Next(0, 2);
         switch (r)
@@ -43,12 +44,17 @@ public class Program
     {
         for (int i = 0; i < 4; i++)
         {
+            //убираем трупы
             corpse_cleaning(gameField, Player1, Player2);
+            //есть ли на данной позиции существо
             if (gameField.get_slot(i) != null)
             {
+                //коэфициенты изменения урона от способностей
                 int stink = 0;
                 int leader_effect = 0;
                 int poison_effect = 0;
+                
+                //если i = 0 слева никого быть не может
                 if (i > 0)
                 {
                     if (gameField.get_slot(i - 1) != null)
@@ -60,6 +66,7 @@ public class Program
                     }
                 }
 
+                //если i = 3 справа никого быть не может
                 if (i < 3)
                 {
                     if (gameField.get_slot(i + 1) != null)
@@ -71,23 +78,25 @@ public class Program
                     }
                 }
 
+                //есть ли враг?
                 if (gameField.get_slot(i + 4) != null)
                 {
+                    //есть ли урон, который можно понизить способностью stinky
                     if (gameField.get_slot(i).get_damage() > 0 || leader_effect > 0)
                     {
                         stink = Convert.ToInt32(gameField.get_slot(i + 4).is_stinky());
                     }
                 }
-
+                //ядовитый?
                 if (gameField.get_slot(i).is_poison() &&
                     (leader_effect > 0 || gameField.get_slot(i).get_damage() > 0))
                 {
                     poison_effect = 100000000;
                 }
-
+                //особая атака?
                 if (gameField.get_slot(i).is_double_kicker())
                 {
-                    Console.WriteLine("Ben");
+                    // может ли быть враг справа?
                     if (i < 3)
                     {
                         if (gameField.get_slot(i + 5) != null)
@@ -95,7 +104,6 @@ public class Program
                             if (((!gameField.get_slot(i + 5).is_antifly()) && gameField.get_slot(i).is_fly()) ||
                                 (gameField.get_slot(i + 5).is_water()))
                             {
-                                Console.WriteLine("wtf?");
                                 gameField.set_damage_balance(2,
                                     gameField.get_slot(i).get_damage() + leader_effect - stink);
                             }
@@ -114,12 +122,11 @@ public class Program
                         }
                         else
                         {
-                            Console.WriteLine("whyyyyyy");
                             gameField.set_damage_balance(2,
                                 gameField.get_slot(i).get_damage() + leader_effect - stink);
                         }
                     }
-
+                    // может ли быть враг слева?
                     if (i > 0)
                     {
                         if (gameField.get_slot(i + 3) != null)
