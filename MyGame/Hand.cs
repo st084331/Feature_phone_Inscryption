@@ -9,12 +9,14 @@ public class Hand: Main_Components
         this.owner = own;
         this.cards = new List<Card>();
     }
-
+    
+    // Добавим карту
     public void take_card(Card card)
     {
         this.cards.Add(card);
     }
 
+    // Сбрасываем карту
     public Card drop_card(int i)
     {
         Card choice = cards[i];
@@ -27,6 +29,7 @@ public class Hand: Main_Components
         return cards;
     }
 
+    // Красивый вывод карт с руки
     public void show_cards()
     {
         Console.WriteLine("Here is what you have.");

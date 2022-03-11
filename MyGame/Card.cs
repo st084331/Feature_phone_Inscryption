@@ -1,13 +1,17 @@
 namespace MyGame;
 
+//Класс карты
 public class Card: Main_Components
 {
     protected int heal_points;
     protected int damage;
-    protected List<string> abilities;
+    protected List<string> abilities; //Способности карты
     protected string name;
+    // Или кровь
     protected int blood_cost;
+    // Или кости
     protected int bones_cost;
+    // Или ничего
 
     public void set_name(string NAME)
     {
@@ -54,6 +58,7 @@ public class Card: Main_Components
         return bones_cost;
     }
 
+    // Летает ли существо?
     public bool is_fly()
     {
         foreach (var abil in abilities)
@@ -64,6 +69,7 @@ public class Card: Main_Components
         return false;
     }
     
+    // Защищает от летунов?
     public bool is_antifly()
     {
         foreach (var abil in abilities)
@@ -154,6 +160,7 @@ public class Card: Main_Components
         return false;
     }
 
+    // Красивая строка со списком способностей
     public string list_of_abilities()
     {
         if (abilities.Count != 0)

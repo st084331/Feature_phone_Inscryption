@@ -13,6 +13,7 @@ public class Deck: Main_Components
         cards = new List<Card>();
         var rand = new Random();
         int r;
+        // Делаем рандомную колоду карт
         for (int i = 0; i < 35; i++)
         {
             r = rand.Next(0,17);
@@ -78,11 +79,15 @@ public class Deck: Main_Components
         this.cards.Add(card);
     }
 
-    public Card get_card(bool choice)
+    // Вытягивание карты из колоды
+    public Card get_card(string choice)
     {
+        // По дефолту это Белка
         Card res_card = new Squirrel();
-        if (choice)
+        // Мы хотим получить белку или случайную карту?
+        if (choice != "squirrel")
         {
+            // Не пуста ли колода рандомных карт
             if (cards.Count != 0)
             {
                 res_card = cards[cards.Count - 1];

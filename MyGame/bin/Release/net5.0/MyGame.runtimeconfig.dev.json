@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/akabynda/.dotnet/store/|arch|/|tfm|",
+      "/Users/akabynda/.nuget/packages"
+    ]
+  }
+}

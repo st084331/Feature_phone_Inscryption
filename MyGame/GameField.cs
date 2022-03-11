@@ -1,5 +1,6 @@
 namespace MyGame;
 
+// Игровое поле
 public class Game_Field: Main_Components
 {
     private Card[] slots;
@@ -11,11 +12,13 @@ public class Game_Field: Main_Components
         slots = new Card[8] {null, null, null, null, null, null, null, null};
     }
 
+    // Записываем нанесенный урон Герою
     public void set_damage_balance(int player_number, int damage)
     {
         this.scales[player_number - 1] += damage;
     }
 
+    // Каков разница в полученном уроне Героев
     public int check_damage_balance()
     {
         return Math.Abs(scales[0] - scales[1]);
@@ -79,6 +82,7 @@ public class Game_Field: Main_Components
         }
     }
     
+    // Красивый вывод слотов
     public void show_cards_first_side()
     {
         for(int i = 0; i < 4; i++)
