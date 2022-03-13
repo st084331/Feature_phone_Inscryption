@@ -5,14 +5,14 @@ public class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Enter the number of Game Mode:\n1. Person Vs Person\n2. Boss Fight (AI vs Person)\n3. Bot battle");
-        int choice = 0;
-        while (choice < 1 || choice > 3)
+        string choice = "";
+        while (choice != "1" && choice != "2" && choice != "3")
         {
-            choice = Convert.ToInt32(Console.ReadLine());
+            choice = Console.ReadLine();
         }
         Console.Clear();
 
-        switch (choice)
+        switch (Convert.ToInt32(choice))
         {
             case 1:
                 PersonVsPerson();
@@ -594,6 +594,7 @@ public class Program
             gameField.show_cards_first_side();
             Console.WriteLine("Opponent side:");
             gameField.show_cards_second_side();
+            Console.WriteLine("Your bones: " + Player1.get_bones());
             hand1.show_cards();
             Console.WriteLine("Now you can play cards.");
             while (hand1.get_cards_on_hand().Count != 0 && end == false)
@@ -626,11 +627,23 @@ public class Program
                     gameField.show_cards_first_side();
                     Console.WriteLine("Opponent side:");
                     gameField.show_cards_second_side();
+                    Console.WriteLine("Your bones: " + Player1.get_bones());
                     hand1.show_cards();
                     Console.WriteLine("Type the number you want to place.");
                     while (hand_choice < 1 || hand_choice > hand1.get_cards_on_hand().Count)
                     {
-                        hand_choice = Convert.ToInt32(Console.ReadLine());
+                        try
+                        {
+                            hand_choice = Convert.ToInt32(Console.ReadLine());
+                            if (hand_choice < 1 || hand_choice > hand1.get_cards_on_hand().Count)
+                            {
+                                Console.WriteLine("Type the number you want to place.");  
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Type the number you want to place.");  
+                        }
                     }
     
                     if (hand1.get_cards_on_hand()[hand_choice - 1].get_blood_cost() != 0)
@@ -655,9 +668,17 @@ public class Program
                                 while (sacrifice_choice < 1 || sacrifice_choice > 4 ||
                                        gameField.get_first_part_slots()[sacrifice_choice - 1] == null)
                                 {
-                                    sacrifice_choice = Convert.ToInt32(Console.ReadLine());
-                                    if (sacrifice_choice < 1 || sacrifice_choice > 4 ||
-                                        gameField.get_first_part_slots()[sacrifice_choice - 1] == null)
+                                    try
+                                    {
+                                        sacrifice_choice = Convert.ToInt32(Console.ReadLine());
+
+                                        if (sacrifice_choice < 1 || sacrifice_choice > 4 ||
+                                            gameField.get_first_part_slots()[sacrifice_choice - 1] == null)
+                                        {
+                                            Console.WriteLine("Type the number that you want to sacrifice.");
+                                        }
+                                    }
+                                    catch
                                     {
                                         Console.WriteLine("Type the number that you want to sacrifice.");
                                     }
@@ -678,9 +699,16 @@ public class Program
                             while (slot_choice < 1 || slot_choice > 4 ||
                                    gameField.get_first_part_slots()[slot_choice - 1] != null)
                             {
-                                slot_choice = Convert.ToInt32(Console.ReadLine());
-                                if (slot_choice < 1 || slot_choice > 4 ||
-                                    gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                try
+                                {
+                                    slot_choice = Convert.ToInt32(Console.ReadLine());
+                                    if (slot_choice < 1 || slot_choice > 4 ||
+                                        gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                    {
+                                        Console.WriteLine("Type the number where you want to place your card.");
+                                    }
+                                }
+                                catch
                                 {
                                     Console.WriteLine("Type the number where you want to place your card.");
                                 }
@@ -698,6 +726,7 @@ public class Program
                             gameField.show_cards_first_side();
                             Console.WriteLine("Opponent side:");
                             gameField.show_cards_second_side();
+                            Console.WriteLine("Your bones: " + Player1.get_bones());
                             hand1.show_cards();
                         }
                         else
@@ -722,11 +751,18 @@ public class Program
                                 while (slot_choice < 1 || slot_choice > 4 ||
                                        gameField.get_first_part_slots()[slot_choice - 1] != null)
                                 {
-                                    slot_choice = Convert.ToInt32(Console.ReadLine());
-                                    if (slot_choice < 1 || slot_choice > 4 ||
-                                        gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                    try
                                     {
-                                        Console.WriteLine("Type the number where you want to place your card.");
+                                        slot_choice = Convert.ToInt32(Console.ReadLine());
+                                        if (slot_choice < 1 || slot_choice > 4 ||
+                                            gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                        {
+                                            Console.WriteLine("Type the number where you want to place your card.");
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("Type the number where you want to place your card."); 
                                     }
                                 }
     
@@ -745,6 +781,7 @@ public class Program
                                 gameField.show_cards_first_side();
                                 Console.WriteLine("Opponent side:");
                                 gameField.show_cards_second_side();
+                                Console.WriteLine("Your bones: " + Player1.get_bones());
                                 hand1.show_cards();
                             }
                             else
@@ -772,11 +809,18 @@ public class Program
                             while (slot_choice < 1 || slot_choice > 4 ||
                                    gameField.get_first_part_slots()[slot_choice - 1] != null)
                             {
-                                slot_choice = Convert.ToInt32(Console.ReadLine());
-                                if (slot_choice < 1 || slot_choice > 4 ||
-                                    gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                try
                                 {
-                                    Console.WriteLine("Type the number where you want to place your card.");
+                                    slot_choice = Convert.ToInt32(Console.ReadLine());
+                                    if (slot_choice < 1 || slot_choice > 4 ||
+                                        gameField.get_first_part_slots()[slot_choice - 1] != null)
+                                    {
+                                        Console.WriteLine("Type the number where you want to place your card.");
+                                    }
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Type the number where you want to place your card."); 
                                 }
                             }
     
@@ -792,6 +836,7 @@ public class Program
                             gameField.show_cards_first_side();
                             Console.WriteLine("Opponent side:");
                             gameField.show_cards_second_side();
+                            Console.WriteLine("Your bones: " + Player1.get_bones());
                             hand1.show_cards();
                         }
                         else
@@ -1016,12 +1061,20 @@ public class Program
                 gameField.show_cards_second_side();
                 Console.WriteLine("Opponent side:");
                 gameField.show_cards_first_side();
+                Console.WriteLine("Your bones: " + Player2.get_bones());
                 hand2.show_cards();
                 Console.WriteLine("Type the number you want to place.");
                 while (hand_choice < 1 || hand_choice > hand2.get_cards_on_hand().Count)
                 {
-                    hand_choice = Convert.ToInt32(Console.ReadLine());
-                    if (hand_choice < 1 || hand_choice > hand2.get_cards_on_hand().Count)
+                    try
+                    {
+                        hand_choice = Convert.ToInt32(Console.ReadLine());
+                        if (hand_choice < 1 || hand_choice > hand2.get_cards_on_hand().Count)
+                        {
+                            Console.WriteLine("Type the number you want to place.");
+                        }
+                    }
+                    catch
                     {
                         Console.WriteLine("Type the number you want to place.");
                     }
@@ -1049,9 +1102,16 @@ public class Program
                             while (sacrifice_choice < 1 || sacrifice_choice > 4 ||
                                    gameField.get_second_part_slots()[sacrifice_choice - 1] == null)
                             {
-                                sacrifice_choice = Convert.ToInt32(Console.ReadLine());
-                                if (sacrifice_choice < 1 || sacrifice_choice > 4 ||
-                                    gameField.get_second_part_slots()[sacrifice_choice - 1] == null)
+                                try
+                                {
+                                    sacrifice_choice = Convert.ToInt32(Console.ReadLine());
+                                    if (sacrifice_choice < 1 || sacrifice_choice > 4 ||
+                                        gameField.get_second_part_slots()[sacrifice_choice - 1] == null)
+                                    {
+                                        Console.WriteLine("Type the number you want to sacrifice.");
+                                    }
+                                }
+                                catch
                                 {
                                     Console.WriteLine("Type the number you want to sacrifice.");
                                 }
@@ -1071,9 +1131,16 @@ public class Program
                         while (slot_choice < 1 || slot_choice > 4 ||
                                gameField.get_second_part_slots()[slot_choice - 1] != null)
                         {
-                            slot_choice = Convert.ToInt32(Console.ReadLine());
-                            if (slot_choice < 1 || slot_choice > 4 ||
-                                gameField.get_second_part_slots()[slot_choice - 1] != null)
+                            try
+                            {
+                                slot_choice = Convert.ToInt32(Console.ReadLine());
+                                if (slot_choice < 1 || slot_choice > 4 ||
+                                    gameField.get_second_part_slots()[slot_choice - 1] != null)
+                                {
+                                    Console.WriteLine("Type the number where you want to place your card.");
+                                }
+                            }
+                            catch
                             {
                                 Console.WriteLine("Type the number where you want to place your card.");
                             }
@@ -1114,11 +1181,18 @@ public class Program
                             while (slot_choice < 1 || slot_choice > 4 ||
                                    gameField.get_second_part_slots()[slot_choice - 1] != null)
                             {
-                                slot_choice = Convert.ToInt32(Console.ReadLine());
-                                if (slot_choice < 1 || slot_choice > 4 ||
-                                    gameField.get_second_part_slots()[slot_choice - 1] != null)
+                                try
                                 {
-                                    Console.WriteLine("Type the number where you want to place your card.");
+                                    slot_choice = Convert.ToInt32(Console.ReadLine());
+                                    if (slot_choice < 1 || slot_choice > 4 ||
+                                        gameField.get_second_part_slots()[slot_choice - 1] != null)
+                                    {
+                                        Console.WriteLine("Type the number where you want to place your card.");
+                                    }
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Type the number where you want to place your card."); 
                                 }
                             }
                             Player2.set_bones(Player2.get_bones() -
@@ -1162,11 +1236,18 @@ public class Program
                         while (slot_choice < 1 || slot_choice > 4 ||
                                gameField.get_second_part_slots()[slot_choice - 1] != null)
                         {
-                            slot_choice = Convert.ToInt32(Console.ReadLine());
-                            if (slot_choice < 1 || slot_choice > 4 ||
-                                gameField.get_second_part_slots()[slot_choice - 1] != null)
+                            try
                             {
-                                Console.WriteLine("Type the number where you want to place your card.");
+                                slot_choice = Convert.ToInt32(Console.ReadLine());
+                                if (slot_choice < 1 || slot_choice > 4 ||
+                                    gameField.get_second_part_slots()[slot_choice - 1] != null)
+                                {
+                                    Console.WriteLine("Type the number where you want to place your card.");
+                                }
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Type the number where you want to place your card."); 
                             }
                         }
 
@@ -1195,8 +1276,21 @@ public class Program
 
     static void PersonVsPerson()
     {
-        Card_Maker Player1 = new Card_Maker("Abobus", 1);
-        Card_Maker Player2 = new Card_Maker("Buba", 2);
+        Console.WriteLine("First player, enter your name: ");
+        string name1 = "";
+        while (name1 == "" || name1 == "\n")
+        {
+            name1 = Console.ReadLine();
+        }
+        Card_Maker Player1 = new Card_Maker(name1, 1);
+        Console.WriteLine("Second player, enter your name: ");
+        string name2 = "";
+        while (name2 == "" || name2 == "\n")
+        {
+            name2 = Console.ReadLine();
+        }
+        Card_Maker Player2 = new Card_Maker(name2, 2);
+        Console.Clear();
         Game_Field gameField = new Game_Field();
         Hand hand1 = new Hand(Player1);
         Hand hand2 = new Hand(Player2);
@@ -1266,8 +1360,15 @@ public class Program
     static void AIVsPerson()
     {
         Card_Maker Player1 = new Card_Maker("BOT1", 1);
-        Card_Maker Player2 = new Card_Maker("Buba", 2);
+        Console.WriteLine("Player, enter your name: ");
+        string name2 = "";
+        while (name2 == "" || name2 == "\n")
+        {
+            name2 = Console.ReadLine();
+        }
+        Card_Maker Player2 = new Card_Maker(name2, 2);
         Game_Field gameField = new Game_Field();
+        Console.Clear();
         Hand hand1 = new Hand(Player1);
         Hand hand2 = new Hand(Player2);
         Deck deck1 = new Deck(Player1);
@@ -1331,7 +1432,14 @@ public class Program
     
     static void PersonVsAI()
     {
-        Card_Maker Player1 = new Card_Maker("Abobus", 1);
+        Console.WriteLine("Player, enter your name: ");
+        string name1 = "";
+        while (name1 == "" || name1 == "\n")
+        {
+            name1 = Console.ReadLine();
+        }
+        Console.Clear();
+        Card_Maker Player1 = new Card_Maker(name1, 1);
         Card_Maker Player2 = new Card_Maker("BOT2", 2);
         Game_Field gameField = new Game_Field();
         Hand hand1 = new Hand(Player1);

@@ -1,6 +1,6 @@
 namespace MyGame;
 
-// Игровое поле
+// Игровое полеa
 public class Game_Field: Main_Components
 {
     private Card[] slots;
